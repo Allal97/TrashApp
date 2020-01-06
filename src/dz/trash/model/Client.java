@@ -6,6 +6,7 @@
 package dz.trash.model;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,8 +18,7 @@ public class Client extends User {
     
     private String phoneNumber;
     private String androidversion;
-    private Set<Commentaire> rCommentaire;
-    private Set<Note> rNote;
+    private Note rNote;
     private Set<Challenge> rChallenge;
 
     public Client() {
@@ -27,11 +27,10 @@ public class Client extends User {
         
     }
     
-    public Client(String phoneNumber, String androidversion, int id, String lastName, String firstName, String userName, String password, LocalDate birthdate) {
-        super(id, lastName, firstName, userName, password, birthdate);
+    public Client(String phoneNumber, String androidversion, int id, String lastName, String firstName, String userName, String password, Date birthDate) {
+        super(id, lastName, firstName, userName, password, birthDate);
         this.phoneNumber = phoneNumber;
         this.androidversion = androidversion;
-        rNote = new HashSet<Note>();
         rChallenge = new HashSet<Challenge>();
     }
 
@@ -55,56 +54,34 @@ public class Client extends User {
         return obj instanceof Client && getId() == ((Client) obj).getId();
     }
 
-    public Set<Commentaire> getrCommentaire() {
-        return rCommentaire;
-    }
 
-    public void setrCommentaire(Set<Commentaire> rCommentaire) {
-        this.rCommentaire = rCommentaire;
-    }
-    
-    public void addrCommentaire(Commentaire commentaire){
-        if(!getrCommentaire().contains(commentaire)){
-            getrCommentaire().add(commentaire);
-        }
-    }
-    
-    public void removerCommentaire(Commentaire commentaire){
-        if(getrCommentaire().contains(commentaire)){
-            getrCommentaire().remove(commentaire);
-        }
-    }
-    
-    public void setCommentaire(Set<Commentaire> commentaire){
-        this.rCommentaire = commentaire;
-    }
 
-    public Set<Note> getrNote() {
+    public Note getrNote() {
         return rNote;
     }
 
-    public void setrNote(Set<Note> rNote) {
+    public void setrNote(Note rNote) {
         this.rNote = rNote;
     }
     
-    public void addrNote( Note note){
-        if(!getrNote().contains(note)){
-            if(note.getClient()!= null ){
-                note.removerClient();
-            }
-            note.setClient(this);
-            getrNote().add(note);
-        }
-    }
+//    public void addrNote( Note note){
+//        if(!getrNote().contains(note)){
+//            if(note.getrClient()!= null ){
+//                note.removerClient();
+//            }
+//            note.setrClient((Set<Client>) this);
+//            getrNote().add(note);
+//        }
+//    }
+//
+//    public void removerNote(Note note){
+//        if (getrNote().contains(note)){
+//            getrNote().remove(note);
+//            note.setrClient(null);
+//        }
+//    }
     
-    public void removerNote(Note note){
-        if (getrNote().contains(note)){
-            getrNote().remove(note);
-            note.setClient(null);
-        }
-    }
-    
-    public void setNote(Set<Note> note){
+    public void setNote(Note note){
         this.rNote = note;
     }
 

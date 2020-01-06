@@ -24,7 +24,7 @@ public class Challenge {
     private Address rAddress;
     private Set<Photo> rPhoto;
     private Set<Commentaire> rCommentaire;
-    private Set<Note> rNote;
+    private Note rNote;
     private Client rClient;
     
     
@@ -43,7 +43,6 @@ public class Challenge {
         this.endingDate = endingDate;
         this.rPhoto = rPhoto;
         rCommentaire = new HashSet<Commentaire>();
-        rNote = new HashSet<Note>();
     }
 
     public int getId() {
@@ -175,32 +174,32 @@ public class Challenge {
         this.rCommentaire = commentaire;
     }
 
-    public Set<Note> getrNote() {
+    public Note getrNote() {
         return rNote;
     }
 
-    public void setrNote(Set<Note> rNote) {
+    public void setrNote(Note rNote) {
         this.rNote = rNote;
     }
     
-    public void addrNote(Note note){
+    /*public void addrNote(Note note){
         if(!getrNote().contains(note)){
-            if(note.getChallenge() !=null){
+            if(note.getrChallenge() !=null){
                 note.removerChallenge();
             }
-            note.setChallenge(this);
+            note.setrChallenge((Set<Challenge>) this);
             getrNote().add(note);
         }
-    }
+    }*/
     
-    public void removerNote(Note note){
+    /*public void removerNote(Note note){
         if (getrNote().contains(note)){
             getrNote().remove(note);
-            note.setChallenge(null);
+            note.setrChallenge(null);
         }
-    }
+    }*/
     
-    public void setNote(Set<Note> note){
+    public void setNote(Note note){
         this.rNote = note;
     }
 

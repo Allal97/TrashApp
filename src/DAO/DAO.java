@@ -5,6 +5,7 @@ package DAO;
  */
 
 import java.sql.*;
+import java.util.Set;
 
 public abstract class DAO<T> {
     protected Connection con = null;
@@ -13,11 +14,13 @@ public abstract class DAO<T> {
         this.con = con;
     }
 
-    public abstract boolean create(T obj);
+    public abstract boolean create(T obj) throws SQLException;
 
-    public abstract boolean delete(T obj);
+    public abstract boolean delete(T obj) throws Exception;
 
-    public abstract boolean update(T obj);
+    public abstract boolean update(T obj) throws Exception;
 
-    public abstract T find(int id);
+    public abstract T find(int id)throws SQLException;
+    
+    public abstract Set<T> findAll() throws SQLException;
 }

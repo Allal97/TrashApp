@@ -8,6 +8,8 @@ package DAO;
 import dz.trash.model.Address;
 
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Set;
 
 /**
  * @author bkral
@@ -35,6 +37,11 @@ public class AddressDAO extends DAO<Address> {
 
     @Override
     public Address find(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Set<Address> findAll() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

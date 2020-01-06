@@ -6,13 +6,15 @@
 package DAO;
 
 import dz.trash.model.Challenge;
+
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Set;
 
 /**
- *
  * @author bkral
  */
-public class ChallengeDAO extends DAO<Challenge>{
+public class ChallengeDAO extends DAO<Challenge> {
 
     public ChallengeDAO(Connection con) {
         super(con);
@@ -20,6 +22,7 @@ public class ChallengeDAO extends DAO<Challenge>{
 
     @Override
     public boolean create(Challenge obj) {
+        
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -37,5 +40,10 @@ public class ChallengeDAO extends DAO<Challenge>{
     public Challenge find(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public Set<Challenge> findAll() throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

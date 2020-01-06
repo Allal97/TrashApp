@@ -7,6 +7,8 @@ package DAO;
 
 import dz.trash.model.Commentaire;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Set;
 
 /**
  *
@@ -35,6 +37,11 @@ public class CommentaireDAO extends DAO<Commentaire> {
 
     @Override
     public Commentaire find(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Set<Commentaire> findAll() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

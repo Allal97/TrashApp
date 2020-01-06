@@ -5,49 +5,57 @@
  */
 package dz.trash.model;
 
+import java.util.Set;
+
 /**
  *
  * @author bkral
  */
 public class Note {
     
-    private int NoteValue;
-    private Client rClient;
-    private Challenge challenge;
+    private int noteValue;
+    private Set<Client> rClient;
+    private Set<Challenge> rChallenge;
 
     public Note() {
         
     }
     
-    public Note(int NoteValue) {
-        this.NoteValue = NoteValue;
+    public Note(int noteValue) {
+        this.noteValue = noteValue;
     }
 
     public int getNoteValue() {
-        return NoteValue;
+        return noteValue;
     }
 
-    public void setNoteValue(int NoteValue) {
-        this.NoteValue = NoteValue;
+    public void setNoteValue(int noteValue) {
+        this.noteValue = noteValue;
     }
 
-    public Client getClient() {
+    public void setrClient(Set<Client> rClient) {
+        this.rClient = rClient;
+    }
+
+    public Set<Client> getrClient() {
         return rClient;
     }
 
-    public void setClient(Client client) {
-        this.rClient = client;
+    public Set<Challenge> getrChallenge() {
+        return rChallenge;
     }
-    
-   
-    
-    public void addrClient(Client client){
+
+    public void setrChallenge(Set<Challenge> rChallenge) {
+        this.rChallenge = rChallenge;
+    }
+
+    /*public void addrClient(Set<Client> client){
         if(!client.getrNote().contains(this)){
-            if(getClient() !=null){
+            if(getrClient() !=null){
                 removerClient();
             }
         }
-        setClient(client);
+        setrClient(client);
         client.addrNote(this);
         
     }
@@ -55,40 +63,28 @@ public class Note {
     
     
     public void removerClient(){
-        getClient().removerNote(this);
-        setClient(null);
+        getrClient().removerNote(this);
+        setrClient(null);
     }
 
-    public Client getrClient() {
-        return rClient;
-    }
 
-    public void setrClient(Client rClient) {
-        this.rClient = rClient;
-    }
 
-    public Challenge getChallenge() {
-        return challenge;
-    }
 
-    public void setChallenge(Challenge challenge) {
-        this.challenge = challenge;
-    }
     
-    public void addChallenge(Challenge challenge){
+    public void addChallenge(Set<Challenge> challenge){
         if(!challenge.getrNote().contains(this)){
-            if(getChallenge() != null){
+            if(getrChallenge() != null){
                 removerChallenge();
             }
         }
-        setChallenge(challenge);
+        setrChallenge(challenge);
         challenge.addrNote(this);
     }
     
     public void removerChallenge(){
-        getChallenge().removerNote(this);
-        setChallenge(null);
-    }
+        getrChallenge().removerNote(this);
+        setrChallenge(null);
+    }*/
     
    
     

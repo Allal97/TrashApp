@@ -6,6 +6,7 @@
 package dz.trash.model;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -19,8 +20,8 @@ public class Administrator extends User{
         
     }
     
-    public Administrator(String email, int id, String lastName, String firstName, String userName, String password, LocalDate birthdate) {
-        super(id, lastName, firstName, userName, password, birthdate);
+    public Administrator(String email, int id, String lastName, String firstName, String userName, String password, Date birthDate) {
+        super(id, lastName, firstName, userName, password, birthDate);
         this.email = email;
     }
 

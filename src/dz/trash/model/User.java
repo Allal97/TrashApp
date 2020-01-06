@@ -6,6 +6,7 @@
 package dz.trash.model;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  *
@@ -18,19 +19,19 @@ public class User {
     private String firstName;
     private String userName;
     private String password;
-    private LocalDate birthdate;
+    private Date birthDate;
 
     public User() {
         
     }
     
-    public User(int id, String lastName, String firstName, String userName, String password, LocalDate birthdate) {
+    public User(int id, String lastName, String firstName, String userName, String password, Date birthDate) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
         this.userName = userName;
         this.password = password;
-        this.birthdate = birthdate;
+        this.birthDate = birthDate;
     }
 
     public int getId() {
@@ -73,12 +74,12 @@ public class User {
         this.password = password;
     }
 
-    public LocalDate getBirthdate() {
-        return birthdate;
+    public Date getBirthdate() {
+        return birthDate;
     }
 
-    public void setBirthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
+    public void setBirthdate(Date birthdate) {
+        this.birthDate = birthdate;
     }
     
     public boolean equals(Object obj){

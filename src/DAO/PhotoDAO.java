@@ -7,6 +7,8 @@ package DAO;
 
 import dz.trash.model.Photo;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Set;
 
 /**
  *
@@ -35,6 +37,11 @@ public class PhotoDAO extends DAO<Photo> {
 
     @Override
     public Photo find(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Set<Photo> findAll() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
